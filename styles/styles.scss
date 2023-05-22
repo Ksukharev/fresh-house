@@ -853,6 +853,7 @@ body {
 }
 
 .footer {
+  margin-bottom: 40px;
   &__wrapper {
     flex-direction: column;
   }
@@ -874,8 +875,15 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  &__addinfo {
+    display: flex;
+    align-items: center;
     gap: 32px;
+
+    margin-left: 577px;
   }
 
   &__logo {
