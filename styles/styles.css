@@ -750,4 +750,82 @@ body {
   position: absolute;
   top: 20.2px;
   right: 28.2px;
+}
+
+.footer__wrapper {
+  flex-direction: column;
+}
+.footer__block1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf0ef;
+}
+.footer__block2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+.footer__logol {
+  display: flex;
+  align-items: center;
+  gap: 12.86px;
+}
+.footer__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  max-width: 86px;
+  color: #1e1f1f;
+}
+.footer__tel {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #056b53;
+}
+.footer__fresh2022 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.007em;
+  color: #7e807f;
+}
+.footer__mail {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.007em;
+  color: #1e1f1f;
+}
+.footer__rights {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.007em;
+  color: #1e1f1f;
+}
+.footer__conf {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.007em;
+  color: #078f6f;
 }/*# sourceMappingURL=styles.css.map */
