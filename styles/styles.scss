@@ -68,6 +68,10 @@ $mainFont: "Inter", sans-serif;
 body {
   font-family: $mainFont;
   background-color: $bgColor;
+
+  background-image: url(../assets/img/SHEET.png);
+  background-repeat: no-repeat;
+  background-position: bottom 490px left 0;
 }
 
 .header {
@@ -623,10 +627,10 @@ body {
     border-radius: 18px;
     //  добавить последний бг
     background-image: url(../assets/icons/BANNER-BG_TEST.svg),
-      url(../assets/icons/banner-bg-plan.svg),
+      url(../assets/icons/banner-bg-plan.svg), url(../assets/icons/analyse.png),
       url(../assets/icons/banner-bg-doctor.svg);
     background-position: right 138.25px bottom 0, right 265.01px bottom 0,
-      right 32.36px bottom 0;
+      top 32.06px right 169.4px, right 32.36px bottom 0;
 
     background-repeat: no-repeat;
   }
@@ -682,6 +686,9 @@ body {
 }
 
 .plan {
+  background-image: url(../assets/img/strawberry.png);
+  background-repeat: no-repeat;
+  background-position: right 6px top -8px;
   margin-top: 24px;
   &__wrapper {
     flex-direction: column;
