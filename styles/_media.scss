@@ -1,0 +1,38 @@
+main {
+  display: none;
+}
+footer {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .logo-link {
+    &__text {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__tel-link {
+      display: none;
+    }
+
+    &__btn {
+      display: none;
+    }
+
+    &__burger {
+      display: flex;
+    }
+
+    &__wrapper {
+      justify-content: space-between;
+    }
+  }
+}
