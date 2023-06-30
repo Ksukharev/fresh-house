@@ -159,6 +159,11 @@ body {
   top: 0;
   left: 0;
   z-index: 2;
+  transition: 0.5s;
+}
+.window--hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 .window__menu {
   width: 65%;
@@ -171,6 +176,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.window__close-btn {
+  position: absolute;
+  top: 25px;
+  right: 32px;
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/icons/Кнопка\ закрытия.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.banner-media900 {
+  display: none;
 }
 
 .header {
@@ -463,57 +482,47 @@ body {
 
 .health {
   margin-top: 80px;
-  background-image: url(../assets/img/GroupHEALTH-BG.png), url(../assets/img/GroupHEALTH-BG2.png);
-  background-position: left 0 bottom 74px, bottom 8.7px right 0;
-  background-repeat: no-repeat;
+  margin-bottom: 79px;
+  width: 100%;
 }
 .health__wrapper {
   flex-direction: column;
   align-items: center;
 }
-.health__heading {
-  max-width: 792px;
-}
-.health__list {
-  display: grid;
-  grid-template-columns: repeat(2, 588px);
-  grid-template-rows: repeat(2, 158px);
+.health__block {
   width: 100%;
-  gap: 24px;
-  margin-bottom: 79px;
-}
-.health-card {
-  background: #ffffff;
-  /* for cards */
-  box-shadow: 0px 0px 20px rgba(66, 74, 72, 0.05);
-  border-radius: 18px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   padding: 32px 32px 32px 104px;
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
   background-image: url(../assets/icons/done-icon.svg);
   background-repeat: no-repeat;
   background-position: left 32px top 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.health-card__heading {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
+.health__block-heading {
   font-size: 24px;
+  font-family: Onest;
+  font-weight: 500;
   line-height: 32px;
-  /* identical to box height, or 133% */
-  text-align: left;
-  margin-bottom: 6px;
-  /* text/main */
   color: #1e1f1f;
 }
-.health-card__text {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
+.health__block-text {
   font-size: 18px;
+  font-family: Inter;
   line-height: 28px;
-  /* or 156% */
-  letter-spacing: -0.007em;
-  /* text/main */
+  letter-spacing: -0.126px;
   color: #1e1f1f;
+  max-width: 452px;
+}
+.health__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
 }
 
 .work {
@@ -614,17 +623,17 @@ body {
   margin-top: 96px;
 }
 .offer__banner {
-  width: 1200px;
-  height: 350px;
+  width: 100%;
+  min-height: 350px;
   max-width: 1200px;
   background-color: rgb(5, 107, 83);
   border-radius: 18px;
   background-image: url(../assets/icons/BANNER-BG_TEST.svg), url(../assets/icons/banner-bg-plan.svg), url(../assets/icons/analyse.png), url(../assets/icons/banner-bg-doctor.svg);
-  background-position: right 138.25px bottom 0, right 265.01px bottom 0, top 32.06px right 169.4px, right 32.36px bottom 0;
+  background-position: right 138.25px bottom 0, right 265.01px bottom 0, bottom 81.27px right 169.4px, right 32.36px bottom 0;
   background-repeat: no-repeat;
 }
 
-.banner_subheading {
+.banner__subheading {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -637,14 +646,36 @@ body {
   max-width: 523px;
 }
 .banner__content {
-  margin-top: 40px;
-  margin-left: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 32px;
 }
 .banner__prices {
-  margin-top: 24px;
-  margin-bottom: 62px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  margin-top: 36px;
+  margin-bottom: 44px;
+  padding-left: 32px;
+}
+.banner__prices--action {
+  position: relative;
+  z-index: 1;
+}
+.banner__prices--action::after {
+  content: "";
+  width: 187px;
+  height: 70px;
+  background-image: url(../assets/icons/SubtractФорма\ цены\ .svg);
+  background-repeat: no-repeat;
+  z-index: -1;
+  position: absolute;
+  top: -20px;
+  left: -28px;
 }
 .banner__link {
+  display: inline-block;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -698,6 +729,7 @@ body {
 }
 .plan__list {
   max-width: 1136px;
+  padding-left: 32px;
 }
 .plan__li {
   font-family: "Inter";
@@ -710,19 +742,37 @@ body {
   /* text/main */
   color: #1e1f1f;
 }
+.plan__group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+}
 
 .row {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 24px;
-  margin-top: 24px;
 }
 .row__block {
-  width: 384px;
-  height: 300px;
+  width: 100%;
+  min-height: 300px;
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(66, 74, 72, 0.05);
   border-radius: 18px;
+  padding: 32px;
+}
+.row__block--bg1 {
+  background-image: url(../assets/icons/Модель\ анализа\ фон.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 0 center;
+}
+.row__block--bg2 {
+  background-image: url(../assets/icons/chat\ imageBG-ROW-RIGHT.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 0 center;
 }
 .row__subheading {
   font-family: "Inter", sans-serif;
@@ -731,8 +781,6 @@ body {
   font-size: 24px;
   line-height: 32px;
   color: #1e1f1f;
-  margin-top: 32px;
-  margin-left: 32px;
 }
 .row__text {
   font-family: "Inter", sans-serif;
@@ -743,18 +791,6 @@ body {
   letter-spacing: -0.007em;
   color: #1e1f1f;
   max-width: 320px;
-  margin-top: 8px;
-  margin-left: 32px;
-}
-.row__block--bg1 {
-  background-image: url(../assets/icons/radar\ imageCARD=BG.png);
-  background-repeat: no-repeat;
-  background-position: bottom 0 left 78px;
-}
-.row__block--bg2 {
-  background-image: url(../assets/icons/chat\ imageBG-ROW-RIGHT.svg);
-  background-repeat: no-repeat;
-  background-position: bottom 0 right 78px;
 }
 
 .questions__wrapper {
@@ -807,11 +843,15 @@ body {
 .faqAccordion {
   margin: 0 auto;
   margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
 }
 .faqAccordion__item {
   background-color: #fff;
   width: 100%;
+  border-radius: 15px;
 }
 
 .faqAccordion__header {
@@ -821,11 +861,15 @@ body {
   color: white;
   font-weight: bold;
   position: relative;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 80px;
   padding: 24px 32px;
   background-color: white;
   border-radius: 18px;
+  background-image: url(../assets/icons/Плюс.svg);
+  background-repeat: no-repeat;
+  background-position: top 20px right 24px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -870,7 +914,8 @@ body {
 }
 
 .faqAccordion__contentInner {
-  padding: 10px;
+  padding: 24px;
+  padding-left: 32px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -900,26 +945,33 @@ body {
 .footer__wrapper {
   flex-direction: column;
 }
+.footer__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 80px;
+}
 .footer__block1 {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 80px;
-  padding-bottom: 20px;
+  padding: 20px;
   border-bottom: 1px solid #edf0ef;
 }
 .footer__block2 {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-top: 20px;
+  padding: 20px;
 }
 .footer__addinfo {
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-left: 577px;
 }
 .footer__logol {
   display: flex;
@@ -980,19 +1032,98 @@ body {
   color: #078f6f;
 }
 
-main {
-  display: none;
-}
-
-footer {
-  display: none;
-}
-
 @media (max-width: 1024px) {
   .logo-link__text {
     display: none;
   }
+  .promo__heading {
+    font-size: 60px;
+  }
+  .promo__text {
+    font-size: 20px;
+  }
+  .promo__btn {
+    font-size: 14px;
+    padding: 14px 40px;
+  }
+  .promo-card__text {
+    font-size: 16px;
+  }
+  .sub-heading {
+    font-size: 54px;
+  }
+  .banner-card {
+    padding: 60px;
+  }
+  .banner-card__heading {
+    font-size: 30px;
+    max-width: 516px;
+  }
+  .banner-card__text {
+    font-size: 16px;
+  }
+  .step-list {
+    max-width: 600px;
+  }
+  .step-list__step-text {
+    font-size: 14px;
+  }
+  .step-list__step {
+    max-width: 320px;
+  }
+  .step-list__step::after {
+    content: "";
+    width: 138px;
+    height: 66px;
+    background-image: url(../assets/icons/Line\ 2672\ линия\ адаптив.svg);
+    background-repeat: no-repeat;
+  }
+  .step-list__step:nth-child(even)::after {
+    content: "";
+    width: 138px;
+    height: 66px;
+    background-image: url(../assets/icons/Line\ 2661-линия\ адаптив.svg);
+    background-repeat: no-repeat;
+  }
+  .step-list__step-text {
+    max-width: 200px;
+  }
+  .banner_subheading {
+    font-size: 30px;
+  }
+  .banner__link {
+    font-size: 14px;
+    padding: 14px 40px;
+  }
+  .row {
+    grid-template-columns: [first-column] 1fr [second-column] 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-self: center;
+  }
+  .row__block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .row__block--bg2 {
+    background-position: bottom 0 center;
+  }
+  .row__block-grid {
+    grid-column: span 2;
+  }
+  .plan__group {
+    grid-template-rows: auto auto;
+  }
+  .footer__footer__block2 {
+    padding: 20px 40px;
+  }
 }
+.offer__banner {
+  background-position: center bottom 0, left 29% bottom 0, bottom 81.27px left 48%, right 30% bottom 0;
+}
+
 @media (max-width: 960px) {
   .header__nav {
     display: none;
@@ -1008,5 +1139,60 @@ footer {
   }
   .header__wrapper {
     justify-content: space-between;
+  }
+  .banner-card {
+    background-size: cover;
+    background-position: top;
+    min-height: unset;
+  }
+}
+@media (max-width: 900px) {
+  .banner__content {
+    align-items: center;
+    padding: 40px 32px 72px;
+  }
+  .banner__link {
+    margin-top: 180px;
+  }
+  .banner__subheading {
+    text-align: center;
+  }
+}
+@media (max-width: 760px) {
+  .banner-card {
+    padding: 40px;
+    padding-top: 45%;
+    background-size: 100%;
+    background-position: top;
+    gap: 15px;
+  }
+  .banner-card__heading {
+    font-size: 26px;
+    line-height: 1.3;
+    max-width: unset;
+    text-align: center;
+  }
+  .banner-card__text {
+    font-size: 14px;
+    line-height: 1.2;
+    max-width: 406px;
+    max-width: unset;
+    text-align: center;
+  }
+  .banner-card--bg1 {
+    background-image: url(../assets/img/mobileBg-1.svg);
+  }
+  .banner-card--bg2 {
+    background-image: url(../assets/img/block.svg);
+  }
+  .banner-card--bg3 {
+    background-image: url(../assets/img/BG2SVGmobile.svg);
+  }
+  .health__list {
+    grid-template-columns: 1fr;
+  }
+  .work {
+    background-size: 35%, 35%, cover;
+    background-position: right bottom, left 0 top 162px, center;
   }
 }/*# sourceMappingURL=styles.css.map */
