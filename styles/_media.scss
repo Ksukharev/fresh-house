@@ -228,3 +228,41 @@
     background-position: right bottom, left 0 top 162px, center;
   }
 }
+
+@media (max-width: 570px) {
+  .plan {
+    &__subheading {
+      font-size: 21px;
+    }
+
+    &__li {
+      font-size: 15px;
+    }
+  }
+
+  .row {
+    &__subheading {
+      font-size: 19px;
+    }
+
+    &__text {
+      font-size: 13px;
+    }
+  }
+
+  .footer {
+    &__mail {
+      font-size: 12px;
+    }
+    &__rights {
+      font-size: 12px;
+    }
+    &__conf {
+      font-size: 12px;
+    }
+
+    &__fresh2022 {
+      font-size: 12px;
+    }
+  }
+}

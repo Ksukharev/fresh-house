@@ -1195,4 +1195,30 @@ body {
     background-size: 35%, 35%, cover;
     background-position: right bottom, left 0 top 162px, center;
   }
+}
+@media (max-width: 570px) {
+  .plan__subheading {
+    font-size: 21px;
+  }
+  .plan__li {
+    font-size: 15px;
+  }
+  .row__subheading {
+    font-size: 19px;
+  }
+  .row__text {
+    font-size: 13px;
+  }
+  .footer__mail {
+    font-size: 12px;
+  }
+  .footer__rights {
+    font-size: 12px;
+  }
+  .footer__conf {
+    font-size: 12px;
+  }
+  .footer__fresh2022 {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=styles.css.map */
