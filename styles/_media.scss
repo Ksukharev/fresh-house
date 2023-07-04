@@ -247,6 +247,7 @@
 
     &__text {
       font-size: 13px;
+      line-height: 21px;
     }
   }
 
@@ -263,6 +264,126 @@
 
     &__fresh2022 {
       font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .promo {
+    &__heading {
+      font-size: 40px;
+      line-height: 55px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+  }
+
+  .banners {
+    &__heading {
+      font-size: 35px;
+    }
+  }
+
+  .banner-card {
+    &__heading {
+      font-size: 20px;
+    }
+    &__text {
+      line-height: 1.5;
+    }
+  }
+
+  .health {
+    &__heading {
+      font-size: 35px;
+    }
+    &__block-heading {
+      font-size: 22px;
+    }
+    &__block-text {
+      font-size: 16px;
+    }
+  }
+
+  .work {
+    &__sub-heading {
+      font-size: 35px;
+    }
+  }
+
+  .step-list {
+    &__step {
+      max-width: unset;
+    }
+
+    &__step::after {
+      left: 30%;
+    }
+
+    &__step:nth-child(even)::after {
+      right: 35%;
+    }
+
+    &__step-text {
+      font-size: 18px;
+      max-width: unset;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faqAccordion {
+    &__header {
+      font-size: 20px;
+    }
+
+    &__contentInner {
+      font-size: 16px;
+    }
+  }
+
+  .footer {
+    &__tel {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .footer {
+    &__block1 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__block2 {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &__addinfo {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .health {
+    &__heading {
+      line-height: 45px;
+    }
+
+    &__block-heading {
+      font-size: 19px;
+    }
+    &__block-text {
+      line-height: 22px;
     }
   }
 }

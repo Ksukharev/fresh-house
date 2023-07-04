@@ -842,7 +842,6 @@ body {
 
 .faqAccordion {
   margin: 0 auto;
-  margin-left: 15px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1208,6 +1207,7 @@ body {
   }
   .row__text {
     font-size: 13px;
+    line-height: 21px;
   }
   .footer__mail {
     font-size: 12px;
@@ -1220,5 +1220,87 @@ body {
   }
   .footer__fresh2022 {
     font-size: 12px;
+  }
+}
+@media (max-width: 510px) {
+  .promo__heading {
+    font-size: 40px;
+    line-height: 55px;
+  }
+  .promo__text {
+    font-size: 16px;
+  }
+  .banners__heading {
+    font-size: 35px;
+  }
+  .banner-card__heading {
+    font-size: 20px;
+  }
+  .banner-card__text {
+    line-height: 1.5;
+  }
+  .health__heading {
+    font-size: 35px;
+  }
+  .health__block-heading {
+    font-size: 22px;
+  }
+  .health__block-text {
+    font-size: 16px;
+  }
+  .work__sub-heading {
+    font-size: 35px;
+  }
+  .step-list__step {
+    max-width: unset;
+  }
+  .step-list__step::after {
+    left: 30%;
+  }
+  .step-list__step:nth-child(even)::after {
+    right: 35%;
+  }
+  .step-list__step-text {
+    font-size: 18px;
+    max-width: unset;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .faqAccordion__header {
+    font-size: 20px;
+  }
+  .faqAccordion__contentInner {
+    font-size: 16px;
+  }
+  .footer__tel {
+    font-size: 16px;
+  }
+}
+@media (max-width: 430px) {
+  .footer__block1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__block2 {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .footer__addinfo {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 360px) {
+  .health__heading {
+    line-height: 45px;
+  }
+  .health__block-heading {
+    font-size: 19px;
+  }
+  .health__block-text {
+    line-height: 22px;
   }
 }/*# sourceMappingURL=styles.css.map */
