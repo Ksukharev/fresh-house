@@ -125,13 +125,6 @@
   }
 }
 
-.offer {
-  &__banner {
-    background-position: center bottom 0, left 29% bottom 0,
-      bottom 81.27px left 48%, right 30% bottom 0;
-  }
-}
-
 @media (max-width: 960px) {
   .header {
     &__nav {
@@ -179,6 +172,13 @@
       text-align: center;
     }
   }
+
+  .offer {
+    &__banner {
+      background-position: center bottom, left 29% bottom 0,
+        bottom 81.27px left 48%, right 30% bottom 0;
+    }
+  }
 }
 
 @media (max-width: 760px) {
@@ -193,8 +193,6 @@
       font-size: 26px;
       line-height: 1.3;
       max-width: unset;
-
-      text-align: center;
     }
 
     &__text {
@@ -202,8 +200,6 @@
       line-height: 1.2;
       max-width: 406px;
       max-width: unset;
-
-      text-align: center;
     }
 
     &--bg1 {
@@ -251,6 +247,19 @@
     }
   }
 
+  .offer {
+    &__banner {
+      background-position: center bottom, bottom left 10%, bottom 22% center,
+        bottom right 10%;
+    }
+  }
+
+  .banner {
+    &__subheading {
+      font-size: 35px;
+    }
+  }
+
   .footer {
     &__mail {
       font-size: 12px;
@@ -282,6 +291,13 @@
   .banners {
     &__heading {
       font-size: 35px;
+    }
+  }
+
+  .offer {
+    &__banner {
+      background-position: center bottom, bottom left, bottom 22% center,
+        bottom right;
     }
   }
 
@@ -351,9 +367,7 @@
       font-size: 16px;
     }
   }
-}
 
-@media (max-width: 430px) {
   .footer {
     &__block1 {
       flex-direction: column;
@@ -373,6 +387,22 @@
   }
 }
 
+@media (max-width: 430px) {
+  .offer {
+    &__banner {
+      background-size: 50%;
+      background-position: center bottom, left bottom, center bottom 15%,
+        right bottom;
+    }
+  }
+
+  .banner {
+    &__subheading {
+      font-size: 30px;
+    }
+  }
+}
+
 @media (max-width: 360px) {
   .health {
     &__heading {
@@ -384,6 +414,19 @@
     }
     &__block-text {
       line-height: 22px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .faqAccordion {
+    &__header {
+      font-size: 16px;
+      padding: 24px 32px 24px 13px;
+    }
+
+    &__contentInner {
+      font-size: 13px;
     }
   }
 }
